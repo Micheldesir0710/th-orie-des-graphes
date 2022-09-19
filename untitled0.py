@@ -57,8 +57,12 @@ def trie(G):
     
     return L
 
-def _setdom(G,n):
-    if(len(G[n])<i)
+def _setdom(G,n,i):
+    for j in range(i):
+        print("n :", n, " et j : ",j)
+        if G[G[n][j]][-1]!='/':
+            print("J'ai marqué" , j)
+            G[G[n][j]].append('/')
     
 
 def setdom(G,L):
@@ -67,7 +71,8 @@ def setdom(G,L):
         if G[L[i][0]][-1]!= '/':
             print("J'ai sélectionné" , L[i][0])
             dom.append(L[i][0])
-            G = _setdom(G,L[i][0],len(G[L[i][0]]))  
+            G = _setdom(G,L[i][0],len(G[L[i][0]])) 
+            print("J'ai marqué" , L[i][0]) 
             G[L[i][0]].append("/")
     print(G)
     return dom        
