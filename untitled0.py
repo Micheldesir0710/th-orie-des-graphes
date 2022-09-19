@@ -57,11 +57,17 @@ def trie(G):
     
     return L
 
+def _setdom(G,n):
+    if(len(G[n])<i)
+    
+
 def setdom(G,L):
     dom=[]
     for i in range(len(L)):
         if G[L[i][0]][-1]!= '/':
+            print("J'ai sélectionné" , L[i][0])
             dom.append(L[i][0])
+            G = _setdom(G,L[i][0],len(G[L[i][0]]))  
             G[L[i][0]].append("/")
     print(G)
     return dom        
