@@ -60,9 +60,12 @@ def trie(G):
 def _setdom(G,n,i):
     for j in range(i):
         print("n :", n, " et j : ",j)
+        print(G[n][j])### set de départ supérieur à 8 ( G[n][j] = 8 or la len(G[n]) = 5)
+        print(G[G[n][j]])###
         if G[G[n][j]][-1]!='/':
             print("J'ai marqué" , j)
             G[G[n][j]].append('/')
+            print("G : ",G)
     
 
 def setdom(G,L):
@@ -72,10 +75,12 @@ def setdom(G,L):
             print("J'ai sélectionné" , L[i][0])
             dom.append(L[i][0])
             G = _setdom(G,L[i][0],len(G[L[i][0]])) 
-            print("J'ai marqué" , L[i][0]) 
-            G[L[i][0]].append("/")
+            print("J'ai marqué" , L[i][0]) ##
+            print("L : " , L)##
+            print("G[L[i][0]] : ", G[L[i][0]])##
+            G[L[i][0]].append('/') #TypeError: 'NoneType' object is not subscriptable (Hypothèse : L étant un Tuple, peut-etre que L[i][0] ne peut pas être lu - Réponse : changé le type des éléments i dans L )
     print(G)
     return dom        
-M=[[1,3,4,5],[8,74,9,0,3],[0,2,9,7,35],[1,25,63,83],[2,3,1]]
+M=[[6, 9], [5], [6, 3], [2, 4, 7], [3, 6, 8], [1], [0, 2, 4], [3], [4], [0]]    #[[1,3,4,5],[8,74,9,0,3],[0,2,9,7,35],[1,25,63,83],[2,3,1]] #changer la liste avec une normale
 
 print(setdom(M,trie(M)))
