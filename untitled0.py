@@ -59,13 +59,11 @@ def trie(G):
 
 def _setdom(G,n,i):
     for j in range(i):
-        print("n :", n, " et j : ",j)
-        print(G[n][j])### set de départ supérieur à 8 ( G[n][j] = 8 or la len(G[n]) = 5)
-        print(G[G[n][j]])###
         if G[G[n][j]][-1]!='/':
             print("J'ai marqué" , j)
             G[G[n][j]].append('/')
             print("G : ",G)
+    return G
     
 
 def setdom(G,L):
@@ -76,8 +74,6 @@ def setdom(G,L):
             dom.append(L[i][0])
             G = _setdom(G,L[i][0],len(G[L[i][0]])) 
             print("J'ai marqué" , L[i][0]) ##
-            print("L : " , L)##
-            print("G[L[i][0]] : ", G[L[i][0]])##
             G[L[i][0]].append('/') #TypeError: 'NoneType' object is not subscriptable (Hypothèse : L étant un Tuple, peut-etre que L[i][0] ne peut pas être lu - Réponse : changé le type des éléments i dans L )
     print(G)
     return dom        
