@@ -5,9 +5,10 @@ Created on Mon Sep 19 13:41:08 2022
 @author: michel
 """
 
-from random import randint
+from graph_generation import *
 
-class Graph:
+
+'''class Graph:
     def __init__(self, order, weights = None,  directed = False, adjlists = []):
         self.order = order
         self.directed = directed
@@ -31,7 +32,7 @@ class Graph:
             return a
         else:
             return 0
-'''randint(0,5)*(diff*10+1)'''
+
 def generateRandomGraph(diff):
     G = Graph(10, randint(0,2), randint(0,2))
     for i in range(G.order + randint(0,3)*G.order):
@@ -39,12 +40,12 @@ def generateRandomGraph(diff):
         if chosen and G.weights:
             G.weights[chosen] = randint(0,15)
     return G
-
+'''
 '''G = generateRandomGraph(1)
 print(G.adjlists)
 if G.weights:
     print(G.weights)'''
-    
+'''randint(0,5)*(diff*10+1)'''    
     
 def trie(G):
     L=[]
@@ -77,6 +78,6 @@ def setdom(G,L):
             G[L[i][0]].append('/') #TypeError: 'NoneType' object is not subscriptable (Hypothèse : L étant un Tuple, peut-etre que L[i][0] ne peut pas être lu - Réponse : changé le type des éléments i dans L )
     print(G)
     return dom        
-M=[[6, 9], [5], [6, 3], [2, 4, 7], [3, 6, 8], [1], [0, 2, 4], [3], [4], [0]]    #[[1,3,4,5],[8,74,9,0,3],[0,2,9,7,35],[1,25,63,83],[2,3,1]] #changer la liste avec une normale
+M=graph(list_adj,1000,False,False,15000)   #[[1,3,4,5],[8,74,9,0,3],[0,2,9,7,35],[1,25,63,83],[2,3,1]] #changer la liste avec une normale
 
 print(setdom(M,trie(M)))
