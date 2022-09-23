@@ -38,8 +38,9 @@ def setdom(G,L):
             G = _setdom(G,L[i][0],len(G[L[i][0]])) 
             print("J'ai marqué" , L[i][0]) ##
             G[L[i][0]].append('/')
-            print(len(dom))
-    return dom        
+    return dom 
+
+       
 M=graph([[]],1000,False,False,15000)   
 
 print(setdom(M,trie(M)))
