@@ -5,9 +5,7 @@ import random
 
 list_adj = [[]]
 list_w = []
-#taille = 5
-#oriented = False
-#weight = True   #True = random de poid entre 1 et 10 ou si False = 1
+
 
 
 def graph(list_adj,taille,weight,oriented,vertices):
@@ -32,9 +30,7 @@ def graph(list_adj,taille,weight,oriented,vertices):
         del list_adj[0]
 
 
-        '''print("list_adj : ", list_adj)
-        print("list_w : ", list_w)
-'''
+       
         return list_adj
 
 ##non oriented
@@ -56,16 +52,8 @@ def graph(list_adj,taille,weight,oriented,vertices):
                 
                 
                 
-        '''print("list_adj_non_o : ",list_adj)
-        #print("list_w : ", list_w)
-        print("number of vertices : ",count)
-'''
+
         return list_adj
 
 
-graph(list_adj,1000,False,False,15000)
 
-
-# à tester avec noeud empty
-# list_adj_non_o :  [[9, 1, 2, 6, 7], [0, 5, 7, 6], [0, 6], [5, 4, 6], [3, 7, 9], [3, 1], [9, 0, 2, 3, 1], [4, 1, 0], [], [0, 6, 4]]
-# number of vertices :  15
