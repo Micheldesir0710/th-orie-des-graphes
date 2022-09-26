@@ -58,7 +58,8 @@ def setdom(G,L):
     fichier.write("\nLe dominiting set du graphe G est: [")
     for i in range(len(dom)-1):
         fichier.write("" + str(dom[i]) + ", ")
-    fichier.write("" + str(dom[-1]) + "] ")    
+    fichier.write("" + str(dom[-1]) + "]\n")  
+    fichier.write("\nPourcentage du dominiting set: "+ str((len(dom)*100)/len(G))+"%") 
     fichier.close()
     return dom 
 
